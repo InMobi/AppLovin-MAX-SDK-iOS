@@ -462,6 +462,14 @@ static MAAdapterInitializationStatus ALInMobiInitializationStatus = NSIntegerMin
         [extras setObject: isAgeRestrictedUser forKey: @"coppa"];
     }
     
+    if ( ALSdk.versionCode >= 61100 )
+    {
+        NSNumber *isDoNotSell = [self privacySettingForSelector: @selector(isDoNotSell) fromParameters: parameters];
+        if ( isDoNotSell )
+        {
+            [extras setObject: isDoNotSell forKey: @"do_not_sell"];
+        }
+    }
     return extras;
 }
 
