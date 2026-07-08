@@ -10,7 +10,7 @@
 #import <YsoNetwork/YsoNetwork.h>
 #import <YsoNetwork/YsoNetwork-Swift.h>
 
-#define ADAPTER_VERSION @"1.2.0.0"
+#define ADAPTER_VERSION @"1.2.1.0"
 
 // NOTE: YSO initially named their adapter ALYsoNetworkMediationAdapter but iOS/Apple convention should be ALYSONetworkMediationAdapter. We will support both naming conventions.
 @interface ALYsoNetworkMediationAdapter : ALYSONetworkMediationAdapter
@@ -35,12 +35,7 @@ static MAAdapterInitializationStatus ALYSONetworkInitializationStatus = NSIntege
     {
         [self log: @"Initializing YSO Network"];
         ALYSONetworkInitializationStatus = MAAdapterInitializationStatusInitializing;
-        // YSO's SDK init method is named +initialize, which collides with the ObjC runtime's
-        // reserved +initialize hook. Dispatch dynamically to avoid the duplicate-call warning.
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-       [YsoNetwork performSelector: @selector(initialize)];
-#pragma clang diagnostic pop
+        [YsoNetwork initializeSdk];
         
         if ( [YsoNetwork isInitialized] )
         {
