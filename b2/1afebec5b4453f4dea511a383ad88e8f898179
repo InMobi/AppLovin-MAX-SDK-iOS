@@ -1,0 +1,20 @@
+InMobi/InMobiAdapter/ALInMobiMediationAdapter.m
+  s_c6b5f652a41c65::t_4e6410bd5044c6 409
+  s_c6b5f652a41c65::t_16d8c78eb0660f 477-484
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "b21afebec5b4453f4dea511a383ad88e8f898179",
+  "prompts": {},
+  "sessions": {
+    "s_c6b5f652a41c65": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "db2aab82-cbfb-486c-b8bc-b7f705f79c14",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Abdul Basit <abdul.basit@inmobi.com>"
+    }
+  }
+}
